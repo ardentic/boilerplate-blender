@@ -1,0 +1,14 @@
+{
+  "name": "html5-boilerplate-gulp",
+  "devDependencies": {
+    "stylus-mq": "~0.1.0",
+    "stylus-jiggers": "~0.1.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
