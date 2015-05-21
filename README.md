@@ -1,5 +1,5 @@
-# <Project Name>
-<Project description>
+# HTML5 Boilerplate Gulp
+HTML5 boilerplate with Gulp, Stylus, Autoprefixer, ESLint, Browserify.
 
 ## Installation
 
