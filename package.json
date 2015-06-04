@@ -3,32 +3,32 @@
   "repository": "https://github.com/marcuslilja/html5-boilerplate-gulp",
   "engines": {
     "node": "0.12.x",
-    "npm": "2.7.x"
+    "npm": "2.11.x"
   },
   "scripts": {
     "postinstall": "bower install && gulp"
   },
   "dependencies": {
-    "browserify": "^9.0.8",
+    "browserify": "^10.2.3",
     "chalk": "^1.0.0",
-    "del": "^1.1.1",
-    "gulp": "^3.8.11",
-    "gulp-autoprefixer": "^2.1.0",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
     "gulp-changed": "^1.2.1",
-    "gulp-eslint": "^0.9.0",
+    "gulp-eslint": "^0.13.0",
     "gulp-if": "^1.2.5",
-    "gulp-minify-css": "^1.0.0",
+    "gulp-minify-css": "^1.1.5",
     "gulp-notify": "^2.2.0",
-    "gulp-sourcemaps": "^1.5.1",
+    "gulp-sourcemaps": "^1.5.2",
     "gulp-strip-debug": "^1.0.2",
-    "gulp-stylus": "^2.0.1",
+    "gulp-stylus": "^2.0.3",
     "gulp-uglify": "^1.2.0",
-    "gulp-util": "^3.0.4",
-    "lodash": "^3.6.0",
+    "gulp-util": "*",
+    "lodash": "^3.9.3",
     "normalize.css": "^3.0.3",
     "require-dir": "^0.3.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.1.0"
+    "watchify": "^3.2.1"
   }
 }
