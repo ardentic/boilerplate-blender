@@ -33,6 +33,17 @@ module.exports = {
     ]
   },
 
+  modernizr: {
+    src: 'assets/scripts/**/*',
+    dest: 'public/scripts/vendor',
+    args: {
+      options: [
+        'html5shiv',
+        'setClasses'
+      ]
+    }
+  },
+
   clean: {
     src: [
       'public/styles',

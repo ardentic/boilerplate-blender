@@ -13,4 +13,4 @@ gulp.task('watch', ['watchify'], function () {
   gulp.watch(['assets/scripts/**/*', 'gulp/**/*'], ['lint']);
 });
 
-gulp.task('default', ['stylus', 'fonts', 'images', 'lint', 'browserify']);
+gulp.task('default', ['stylus', 'fonts', 'images', 'lint', 'modernizr', 'browserify']);
