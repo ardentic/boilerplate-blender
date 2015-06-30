@@ -43,7 +43,9 @@ gulp.task('watchify', ['lint'], function () {
     watcher = watchify(bundler),
 
     onUpdate = function (scripts) {
-      scripts = scripts
+      var output, parsedScripts;
+
+      parsedScripts = scripts
         .filter(function (id) {
           return id.substr(0, 2) !== './';
         })
@@ -51,17 +53,30 @@ gulp.task('watchify', ['lint'], function () {
           return chalk.blue(id.replace(__dirname, ''));
         });
 
-      if (scripts.length > 1) {
-        gutil.log(scripts.length + ' Scripts updated:\n* ' + scripts.join('\n* ') + '\nrebuilding...');
+      if (parsedScripts.length > 1) {
+        output = parsedScripts.length +
+          ' Scripts updated:\n* ' +
+          parsedScripts.join('\n* ') +
+          '\nrebuilding...';
+
+        gutil.log(output);
       } else {
-        gutil.log(scripts[0] + ' updated, rebuilding...');
+        output = parsedScripts[0] +
+          ' updated, rebuilding...';
+
+        gutil.log(output);
       }
 
       bundle(watcher);
     },
 
     onTime = function (time) {
-      gutil.log('Finished \'' + chalk.cyan('watchify') + '\' after ' + chalk.magenta((Math.round(time / 10) / 100) + ' s'));
+      var output = 'Finished \'' +
+        chalk.cyan('watchify') +
+        '\' after ' +
+        chalk.magenta((Math.round(time / 10) / 100) + ' s');
+
+      gutil.log(output);
     };
 
   watcher
