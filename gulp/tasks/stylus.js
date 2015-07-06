@@ -37,6 +37,7 @@ gulp.task('stylus', function () {
     .pipe(stylus(settings.stylus))
     .on('error', utils.handleError)
     .pipe(autoprefixer(settings.autoprefixer))
+    .on('error', utils.handleError)
     .pipe(gulpif(!config.production, sourcemaps.write()))
     .pipe(gulpif(config.production, minify()))
     .pipe(gulp.dest(config.styles.dest));
