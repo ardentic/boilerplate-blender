@@ -15,7 +15,7 @@ gulp.task('lint', function () {
 
     rules: {
       'quotes': [2, 'single'],
-      'camelcase': [1, { 'properties': 'always' }],
+      'camelcase': [2, { 'properties': 'always' }],
       'space-before-function-paren': [2, 'always'],
       'space-after-keywords': [2, 'always'],
       'space-before-blocks': [2, 'always'],
