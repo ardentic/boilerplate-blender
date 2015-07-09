@@ -1,9 +1,14 @@
 
 'use strict';
 
-var gulp = require('gulp'),
+var dotenv = require('dotenv'),
+  gulp = require('gulp'),
   requireDir = require('require-dir');
 
+// Load .env and fail silently
+dotenv.config({ silent: true });
+
+// Load additional gulp task
 requireDir('./tasks');
 
 gulp.task('watch', ['watchify'], function () {

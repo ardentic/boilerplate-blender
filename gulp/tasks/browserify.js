@@ -12,10 +12,12 @@ var config = require('../config'),
   buffer = require('vinyl-buffer'),
   source = require('vinyl-source-stream'),
   chalk = require('chalk'),
+  envify = require('envify/custom'),
   stripDebug = require('gulp-strip-debug');
 
 var bundle = function (bundler) {
   return bundler
+    .transform(envify(process.env))
     .bundle()
     .on('error', utils.handleError)
     .pipe(source('main.js'))
