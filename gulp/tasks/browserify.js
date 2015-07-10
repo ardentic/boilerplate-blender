@@ -13,11 +13,13 @@ var config = require('../config'),
   source = require('vinyl-source-stream'),
   chalk = require('chalk'),
   envify = require('envify/custom'),
+  babelify = require('babelify'),
   stripDebug = require('gulp-strip-debug');
 
 var bundle = function (bundler) {
   return bundler
     .transform(envify(process.env))
+    .transform(babelify)
     .bundle()
     .on('error', utils.handleError)
     .pipe(source('main.js'))
