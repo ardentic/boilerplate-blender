@@ -19,14 +19,14 @@
     "no-multiple-empty-lines": [2, { "max": 1 }],
     "object-curly-spacing": [2, "always"],
     "dot-location": [2, "property"],
-    "no-else-return": [2, "always"],
-    "no-param-reassign": [2, "always"],
-    "no-self-compare": [2, "always"],
-    "radix": [2, "always"],
+    "no-else-return": 2,
+    "no-param-reassign": 2,
+    "no-self-compare": 2,
+    "radix": 2,
     "handle-callback-err": [2, "always"],
     "brace-style": [2, "1tbs"],
-    "no-lonely-if": [2, "always"],
+    "no-lonely-if": 2,
     "max-len": [2, 115, 2],
-    "no-plusplus": [2, "always"]
+    "no-plusplus": 2
   }
 }
