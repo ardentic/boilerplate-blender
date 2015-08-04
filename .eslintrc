@@ -11,6 +11,7 @@
 
   "rules": {
     "quotes": [2, "single"],
+    "semi": [2, "always"],
     "camelcase": [2, { "properties": "always" }],
     "space-before-function-paren": [2, "always"],
     "space-after-keywords": [2, "always"],
