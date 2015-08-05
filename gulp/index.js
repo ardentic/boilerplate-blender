@@ -15,7 +15,7 @@ gulp.task('watch', ['watchify'], function () {
   gulp.watch(['assets/styles/**/*'], ['stylus']);
   gulp.watch(['assets/images/**/*'], ['images']);
   gulp.watch(['assets/fonts/**/*'], ['fonts']);
-  gulp.watch(['assets/scripts/**/*', 'gulp/**/*'], ['lint']);
+  gulp.watch(['assets/scripts/**/*'], ['lint']);
 });
 
 gulp.task('default', ['stylus', 'fonts', 'images', 'lint', 'modernizr', 'browserify']);

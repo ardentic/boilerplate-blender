@@ -28,8 +28,7 @@ module.exports = {
 
   lint: {
     src: [
-      'assets/scripts/**/*',
-      'gulp/**/*'
+      'assets/scripts/**/*'
     ]
   },
 
