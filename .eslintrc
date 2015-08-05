@@ -14,7 +14,7 @@
     "camelcase": [2, { "properties": "always" }],
     "dot-location": [2, "property"],
     "handle-callback-err": [2, "always"],
-    "indent": [2, 2],
+    "indent": [2, 2, {"SwitchCase": 1}],
     "max-len": [2, 115, 2],
     "no-else-return": 2,
     "no-lonely-if": 2,
