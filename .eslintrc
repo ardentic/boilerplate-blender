@@ -12,7 +12,9 @@
   "rules": {
     "brace-style": [2, "1tbs"],
     "camelcase": [2, { "properties": "always" }],
+    "curly": 2,
     "dot-location": [2, "property"],
+    "eqeqeq": 2,
     "handle-callback-err": [2, "always"],
     "indent": [2, 2, {"SwitchCase": 1}],
     "max-len": [2, 115, 2],
@@ -22,6 +24,7 @@
     "no-param-reassign": 2,
     "no-plusplus": 2,
     "no-self-compare": 2,
+    "no-undef": 2,
     "object-curly-spacing": [2, "always"],
     "quotes": [2, "single"],
     "radix": 2,
