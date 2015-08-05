@@ -11,7 +11,7 @@
 
   "rules": {
     "brace-style": [2, "1tbs"],
-    "camelcase": [0, { "properties": "always" }],
+    "camelcase": [2, { "properties": "always" }],
     "comma-dangle": 2,
     "curly": 2,
     "dot-location": [2, "property"],
