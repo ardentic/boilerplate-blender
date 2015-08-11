@@ -50,22 +50,16 @@ var compile = function (watch) {
 
   if (watch) {
     bundler.on('update', function () {
-      var output = 'Starting \'' +
-        chalk.cyan('watchify') +
-        '\'... ';
-
-      gutil.log(output);
-
+      gutil.log(`Starting '${chalk.cyan('watchify')}'...`);
       rebundle();
     });
 
     bundler.on('time', function (time) {
-      var output = 'Finished \'' +
-        chalk.cyan('watchify') +
-        '\' after ' +
-        chalk.magenta((Math.round(time / 10) / 100) + ' s');
+      var seconds = (Math.round(time / 10) / 100) + ' s',
+        taskName = chalk.cyan('watchify'),
+        taskTime = chalk.magenta(seconds);
 
-      gutil.log(output);
+      gutil.log(`Finished '${taskName}' after ${taskTime}`);
     });
   }
 
