@@ -1,14 +1,13 @@
 
-'use strict';
-
-var config = require('../config'),
-  utils = require('../utils'),
-  gulp = require('gulp'),
+var gulp = require('gulp'),
   gulpif = require('gulp-if'),
-  minify = require('gulp-minify-css'),
   stylus = require('gulp-stylus'),
-  autoprefixer = require('gulp-autoprefixer'),
-  sourcemaps = require('gulp-sourcemaps');
+  minify = require('gulp-minify-css'),
+  sourcemaps = require('gulp-sourcemaps'),
+  autoprefixer = require('gulp-autoprefixer');
+
+var utils = require('../utils'),
+  config = require('../config');
 
 gulp.task('stylus', function () {
   var settings = {

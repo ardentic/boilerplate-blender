@@ -1,13 +1,12 @@
 
-'use strict';
-
-var config = require('../config'),
-  utils = require('../utils'),
-  gulp = require('gulp'),
+var gulp = require('gulp'),
   gulpif = require('gulp-if'),
   uglify = require('gulp-uglify'),
   concat = require('gulp-concat'),
   modernizr = require('gulp-modernizr');
+
+var utils = require('../utils'),
+  config = require('../config');
 
 gulp.task('modernizr', function () {
   gulp.src('./' + config.modernizr.src)

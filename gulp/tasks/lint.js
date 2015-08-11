@@ -1,10 +1,9 @@
 
-'use strict';
-
-var config = require('../config'),
-  utils = require('../utils'),
-  gulp = require('gulp'),
+var gulp = require('gulp'),
   eslint = require('gulp-eslint');
+
+var utils = require('../utils'),
+  config = require('../config');
 
 gulp.task('lint', function () {
   return gulp.src(config.lint.src)

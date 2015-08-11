@@ -1,12 +1,9 @@
 
-'use strict';
+require('dotenv').config({ silent: true });
+require('babel/register');
 
-var dotenv = require('dotenv'),
-  gulp = require('gulp'),
+var gulp = require('gulp'),
   requireDir = require('require-dir');
-
-// Load .env and fail silently
-dotenv.config({ silent: true });
 
 // Load additional gulp task
 requireDir('./tasks');
