@@ -1,8 +1,6 @@
 
-'use strict';
-
-var config = require('./config'),
-  notify = require('gulp-notify');
+var notify = require('gulp-notify');
+var config = require('./config');
 
 module.exports = {
   handleError: function (error) {

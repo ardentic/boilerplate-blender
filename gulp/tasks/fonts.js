@@ -1,10 +1,9 @@
 
-'use strict';
-
-var config = require('../config'),
-  utils = require('../utils'),
-  gulp = require('gulp'),
+var gulp = require('gulp'),
   changed = require('gulp-changed');
+
+var utils = require('../utils'),
+  config = require('../config');
 
 gulp.task('fonts', function () {
   return gulp.src(config.fonts.src)
