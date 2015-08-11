@@ -1,6 +1,4 @@
 
-'use strict';
-
 var gutil = require('gulp-util');
 
 module.exports = {
@@ -28,7 +26,8 @@ module.exports = {
 
   lint: {
     src: [
-      'assets/scripts/**/*'
+      'assets/scripts/**/*.{js,jsx}',
+      'gulp/**/*.{js,jsx}'
     ]
   },
 
