@@ -4,7 +4,7 @@
   "license": "MIT",
   "engines": {
     "node": "0.12.x",
-    "npm": "2.11.x"
+    "npm": "2.13.x"
   },
   "scripts": {
     "postinstall": "bower install && gulp"
