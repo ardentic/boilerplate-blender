@@ -3,8 +3,8 @@
   "repository": "https://github.com/ardentic/html5-boilerplate-gulp",
   "license": "MIT",
   "engines": {
-    "node": "0.12.x",
-    "npm": "2.13.x"
+    "node": "4.1.x",
+    "npm": "2.14.x"
   },
   "scripts": {
     "postinstall": "bower install && gulp"
