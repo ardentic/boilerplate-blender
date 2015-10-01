@@ -4,7 +4,7 @@
   "license": "MIT",
   "engines": {
     "node": "4.1.x",
-    "npm": "2.14.x"
+    "npm": "3.3.x"
   },
   "scripts": {
     "postinstall": "bower install && gulp"
@@ -22,11 +22,11 @@
     "gulp-changed": "^1.3.0",
     "gulp-concat": "^2.6.0",
     "gulp-eslint": "^1.0.0",
-    "gulp-if": "^1.2.5",
+    "gulp-if": "^2.0.0",
     "gulp-minify-css": "^1.2.1",
     "gulp-modernizr": "0.0.0",
     "gulp-notify": "^2.2.0",
-    "gulp-sourcemaps": "^1.5.2",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-strip-debug": "^1.0.2",
     "gulp-stylus": "^2.0.7",
     "gulp-uglify": "^1.4.1",
