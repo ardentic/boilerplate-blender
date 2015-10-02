@@ -3,11 +3,6 @@ HTML5 boilerplate with Gulp, Stylus, Autoprefixer, ESLint, Browserify.
 
 ## Installation
 
-Install Bower globally
-```
-npm install -g bower
-```
-
 Install Gulp globally
 ```
 npm install -g gulp
