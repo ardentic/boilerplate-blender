@@ -22,6 +22,7 @@ gulp.task('stylus', function () {
 
       import: [
         'normalize.css/normalize.css',
+        '@ardentic/stylus-jiggers/jiggers',
         '@ardentic/stylus-mq/mq'
       ]
     },
