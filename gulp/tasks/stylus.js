@@ -16,7 +16,6 @@ gulp.task('stylus', function () {
       'include css': true,
 
       paths: [
-        'bower_components',
         'node_modules'
       ],
 
