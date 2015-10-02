@@ -21,7 +21,8 @@ gulp.task('stylus', function () {
       ],
 
       import: [
-        'normalize.css/normalize.css'
+        'normalize.css/normalize.css',
+        '@ardentic/stylus-mq/mq'
       ]
     },
 
