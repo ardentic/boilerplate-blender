@@ -7,9 +7,10 @@
     "npm": "3.3.x"
   },
   "scripts": {
-    "postinstall": "bower install && gulp"
+    "postinstall": "gulp"
   },
   "dependencies": {
+    "@ardentic/stylus-jiggers": "^1.0.0",
     "@ardentic/stylus-mq": "^1.0.0",
     "babel": "^5.8.23",
     "babelify": "^6.3.0",
