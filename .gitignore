@@ -1,4 +1,6 @@
-# Folders
+#
+# folders
+#
 /node_modules
 /bower_components
 /vendor
@@ -7,7 +9,9 @@
 /public/fonts
 /public/images
 
-# Files
+#
+# files
+#
 *.diff
 *.err
 *.orig
