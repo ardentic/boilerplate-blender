@@ -1,6 +1,6 @@
 
 require('dotenv').config({ silent: true });
-require('babel/register');
+require('babel-core/register');
 
 var gulp = require('gulp'),
   requireDir = require('require-dir');
