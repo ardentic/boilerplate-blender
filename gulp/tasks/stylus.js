@@ -2,9 +2,11 @@
 var gulp = require('gulp'),
   gulpif = require('gulp-if'),
   stylus = require('gulp-stylus'),
+  postcss = require('gulp-postcss'),
+  mqpacker = require('css-mqpacker'),
   minify = require('gulp-minify-css'),
-  sourcemaps = require('gulp-sourcemaps'),
-  autoprefixer = require('gulp-autoprefixer');
+  autoprefixer = require('autoprefixer'),
+  sourcemaps = require('gulp-sourcemaps');
 
 var utils = require('../utils'),
   config = require('../config');
@@ -26,9 +28,10 @@ gulp.task('stylus', function () {
       ]
     },
 
-    autoprefixer: {
-      browsers: ['last 5 versions', '> 1%', 'ie 9']
-    }
+    processors: [
+      autoprefixer({ browsers: ['last 5 versions', '> 1%', 'ie 9'] }),
+      mqpacker
+    ]
   };
 
   return gulp
@@ -36,7 +39,7 @@ gulp.task('stylus', function () {
     .pipe(gulpif(!config.production, sourcemaps.init()))
     .pipe(stylus(settings.stylus))
     .on('error', utils.handleError)
-    .pipe(autoprefixer(settings.autoprefixer))
+    .pipe(postcss(settings.processors))
     .on('error', utils.handleError)
     .pipe(gulpif(!config.production, sourcemaps.write()))
     .pipe(gulpif(config.production, minify()))
