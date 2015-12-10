@@ -6,7 +6,8 @@ var gulp = require('gulp'),
   mqpacker = require('css-mqpacker'),
   minify = require('gulp-minify-css'),
   autoprefixer = require('autoprefixer'),
-  sourcemaps = require('gulp-sourcemaps');
+  sourcemaps = require('gulp-sourcemaps'),
+  fontWeights = require('postcss-font-weights');
 
 var utils = require('../utils'),
   config = require('../config');
@@ -30,7 +31,8 @@ gulp.task('stylus', function () {
 
     processors: [
       autoprefixer({ browsers: ['last 5 versions', '> 1%', 'ie 9'] }),
-      mqpacker
+      fontWeights(),
+      mqpacker,
     ]
   };
 
