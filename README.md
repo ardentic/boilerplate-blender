@@ -1,5 +1,5 @@
 # HTML5 Boilerplate Gulp
-HTML5 boilerplate with Gulp, Stylus, Autoprefixer, ESLint, Browserify.
+HTML5 boilerplate with Gulp, Stylus, PostCSS, ESLint, Browserify.
 
 ## Installation
 
