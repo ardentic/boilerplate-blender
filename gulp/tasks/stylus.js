@@ -32,7 +32,7 @@ gulp.task('stylus', function () {
     processors: [
       autoprefixer({ browsers: ['last 5 versions', '> 1%', 'ie 9'] }),
       fontWeights(),
-      mqpacker,
+      mqpacker
     ]
   };
 
