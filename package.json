@@ -4,7 +4,7 @@
   "license": "MIT",
   "engines": {
     "node": "5.4.x",
-    "npm": "3.4.x"
+    "npm": "3.5.x"
   },
   "scripts": {
     "postinstall": "gulp"
