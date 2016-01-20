@@ -16,11 +16,18 @@ var _ = require('lodash'),
 var utils = require('../utils'),
   config = require('../config');
 
+var paths = ['node_modules']
+  .concat(config.scripts.paths)
+  .map(path => './' + path);
+
+var entries = config.scripts.src
+  .map(path => './' + path);
+
 var defaults = {
-  paths: ['./node_modules', './' + config.scripts.path],
-  entries: ['./' + config.scripts.src],
   extensions: ['.js', '.jsx'],
-  debug: !config.production
+  debug: !config.production,
+  entries: entries,
+  paths: paths
 };
 
 var options = _.assign({}, watchify.args, defaults);

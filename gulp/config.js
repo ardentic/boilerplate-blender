@@ -10,8 +10,8 @@ module.exports = {
   },
 
   scripts: {
-    src: 'assets/scripts/main.js',
-    path: 'assets/scripts',
+    src: ['assets/scripts/main.js'],
+    paths: ['assets/scripts'],
     dest: 'public/scripts'
   },
 
