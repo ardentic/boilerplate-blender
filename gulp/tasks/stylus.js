@@ -3,8 +3,8 @@ var gulp = require('gulp'),
   gulpif = require('gulp-if'),
   stylus = require('gulp-stylus'),
   postcss = require('gulp-postcss'),
+  cssnano = require('gulp-cssnano'),
   mqpacker = require('css-mqpacker'),
-  minify = require('gulp-minify-css'),
   autoprefixer = require('autoprefixer'),
   sourcemaps = require('gulp-sourcemaps'),
   fontWeights = require('postcss-font-weights');
@@ -44,6 +44,6 @@ gulp.task('stylus', function () {
     .pipe(postcss(settings.processors))
     .on('error', utils.handleError)
     .pipe(gulpif(!config.production, sourcemaps.write()))
-    .pipe(gulpif(config.production, minify()))
+    .pipe(gulpif(config.production, cssnano()))
     .pipe(gulp.dest(config.styles.dest));
 });
