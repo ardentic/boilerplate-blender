@@ -11,6 +11,7 @@ module.exports = {
 
   scripts: {
     src: 'assets/scripts/main.js',
+    path: 'assets/scripts',
     dest: 'public/scripts'
   },
 

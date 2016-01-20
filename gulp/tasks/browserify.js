@@ -17,6 +17,7 @@ var utils = require('../utils'),
   config = require('../config');
 
 var defaults = {
+  paths: ['./node_modules', './' + config.scripts.path],
   entries: ['./' + config.scripts.src],
   extensions: ['.js', '.jsx'],
   debug: !config.production
