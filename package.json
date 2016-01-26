@@ -30,7 +30,7 @@
     "gulp-cssnano": "^2.1.0",
     "gulp-eslint": "^1.1.1",
     "gulp-if": "^2.0.0",
-    "gulp-modernizr": "0.0.0",
+    "gulp-modernizr": "^1.0.0-alpha",
     "gulp-notify": "^2.2.0",
     "gulp-postcss": "^6.0.1",
     "gulp-sourcemaps": "^1.6.0",
