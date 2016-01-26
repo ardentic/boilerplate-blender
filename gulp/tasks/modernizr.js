@@ -8,11 +8,14 @@ var gulp = require('gulp'),
 var utils = require('../utils'),
   config = require('../config');
 
+var sources = config.modernizr.src
+  .map(source => './' + source);
+
 gulp.task('modernizr', function () {
-  gulp.src('./' + config.modernizr.src)
+  return gulp.src(sources)
     .on('error', utils.handleError)
-    .pipe(concat('modernizr-custom.js'))
-    .pipe(modernizr('modernizr-custom.js', config.modernizr.args))
+    .pipe(modernizr(config.modernizr.args))
     .pipe(gulpif(config.production, uglify()))
+    .pipe(concat('modernizr-custom.js'))
     .pipe(gulp.dest(config.modernizr.dest));
 });

@@ -33,7 +33,7 @@ module.exports = {
   },
 
   modernizr: {
-    src: 'assets/scripts/**/*',
+    src: ['assets/scripts/**/*'],
     dest: 'public/scripts/vendor',
     args: {
       options: [
