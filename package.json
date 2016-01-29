@@ -1,6 +1,6 @@
 {
-  "name": "html5-boilerplate-gulp",
-  "repository": "https://github.com/ardentic/html5-boilerplate-gulp",
+  "name": "boilerplate-blender",
+  "repository": "https://github.com/ardentic/boilerplate-blender",
   "license": "MIT",
   "engines": {
     "node": "5.4.x",
