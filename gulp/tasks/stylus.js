@@ -31,8 +31,8 @@ gulp.task('stylus', function () {
 
     processors: [
       autoprefixer({ browsers: ['last 5 versions', '> 1%', 'ie 9'] }),
+      mqpacker({ sort: true }),
       fontWeights(),
-      mqpacker
     ]
   };
 
