@@ -1,14 +1,34 @@
 
-var gulp = require('gulp'),
-  eslint = require('gulp-eslint');
+import gulp from 'gulp';
+import path from 'path';
+import eslint from 'gulp-eslint';
+import notifier from 'node-notifier';
 
-var utils = require('../utils'),
-  config = require('../config');
+import utils from '../utils';
+import config from '../config';
 
-gulp.task('lint', function () {
+let lint = function () {
   return gulp.src(config.lint.src)
     .pipe(eslint())
-    .pipe(eslint.format('stylish'))
-    .pipe(eslint.failAfterError())
-    .on('error', utils.handleError);
+    .on('error', utils.handleError)
+    .pipe(eslint.format('stylish'));
+};
+
+gulp.task('lint', function () {
+  return lint()
+    .pipe(eslint.results(function (results) {
+      if (results.errorCount > 0) {
+        notifier.notify({
+          title: 'Blender',
+          message: 'Linting errors: ' + results.errorCount,
+          icon: path.join(require.resolve('gulp-notify'), '..', 'assets', 'gulp-error.png'),
+          sound: 'Frog'
+        });
+      }
+    }));
+});
+
+gulp.task('test-lint', function () {
+  return lint()
+    .pipe(eslint.failAfterError());
 });

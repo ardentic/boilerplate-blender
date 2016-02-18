@@ -7,7 +7,8 @@
     "npm": "3.6.x"
   },
   "scripts": {
-    "postinstall": "gulp"
+    "postinstall": "gulp",
+    "test": "gulp test"
   },
   "dependencies": {
     "@ardentic/stylus-jiggers": "^1.0.0",
@@ -39,6 +40,7 @@
     "gulp-uglify": "^1.5.2",
     "gulp-util": "^3.0.7",
     "lodash": "^4.5.0",
+    "node-notifier": "^4.5.0",
     "normalize.css": "^3.0.3",
     "postcss-font-weights": "^2.0.1",
     "require-dir": "^0.3.0",
