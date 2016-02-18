@@ -7,7 +7,8 @@
     "npm": "3.6.x"
   },
   "scripts": {
-    "postinstall": "gulp"
+    "postinstall": "gulp",
+    "test": "gulp test"
   },
   "dependencies": {
     "@ardentic/stylus-jiggers": "^1.0.0",
