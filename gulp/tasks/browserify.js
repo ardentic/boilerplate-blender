@@ -82,6 +82,6 @@ gulp.task('browserify', function () {
   return compile();
 });
 
-gulp.task('watchify', ['lint'], function () {
+gulp.task('watchify', function () {
   return watch();
 });
