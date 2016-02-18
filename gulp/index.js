@@ -1,6 +1,6 @@
 
 require('dotenv').config({ silent: true });
-require('babel-core/register');
+require('babel-register');
 
 var gulp = require('gulp'),
   requireDir = require('require-dir');
@@ -8,7 +8,7 @@ var gulp = require('gulp'),
 // Load additional gulp task
 requireDir('./tasks');
 
-gulp.task('watch', ['watchify'], function () {
+gulp.task('watch', ['watchify'], () => {
   gulp.watch(['assets/styles/**/*'], ['stylus']);
   gulp.watch(['assets/images/**/*'], ['images']);
   gulp.watch(['assets/fonts/**/*'], ['fonts']);
