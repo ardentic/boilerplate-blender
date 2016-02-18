@@ -12,6 +12,10 @@ gulp.task('watch', ['watchify'], () => {
   gulp.watch(['assets/scripts/**/*'], ['lint']);
 });
 
+gulp.task('test', [
+  'test-lint'
+]);
+
 gulp.task('default', [
   'lint',
   'fonts',
