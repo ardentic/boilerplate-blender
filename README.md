@@ -1,3 +1,4 @@
+
 # Boilerplate Blender
 
 Simple boilerplate to quickly start web projects using modern standards. Uses Gulp to run Stylus, PostCSS, ESLint, Browserify and Modernizr.
@@ -12,6 +13,11 @@ npm install -g gulp
 Install dependencies
 ```
 npm install
+```
+
+Create local `.env` file
+```
+cp .env.example .env
 ```
 
 ## Usage
