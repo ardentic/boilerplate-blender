@@ -1,39 +1,39 @@
 
-var _ = require('lodash'),
-  gulp = require('gulp'),
-  chalk = require('chalk'),
-  gulpif = require('gulp-if'),
-  gutil = require('gulp-util'),
-  watchify = require('watchify'),
-  babelify = require('babelify'),
-  uglify = require('gulp-uglify'),
-  buffer = require('vinyl-buffer'),
-  envify = require('envify/custom'),
-  browserify = require('browserify'),
-  source = require('vinyl-source-stream'),
-  stripDebug = require('gulp-strip-debug');
+import _ from 'lodash';
+import gulp from 'gulp';
+import chalk from 'chalk';
+import gulpif from 'gulp-if';
+import gutil from 'gulp-util';
+import watchify from 'watchify';
+import babelify from 'babelify';
+import uglify from 'gulp-uglify';
+import buffer from 'vinyl-buffer';
+import envify from 'envify/custom';
+import browserify from 'browserify';
+import source from 'vinyl-source-stream';
+import stripDebug from 'gulp-strip-debug';
 
-var utils = require('../utils'),
-  config = require('../config');
+import config from '../config';
+import { handleError } from '../utils';
 
-var paths = ['node_modules']
+let paths = ['node_modules']
   .concat(config.scripts.paths)
   .map(path => './' + path);
 
-var entries = config.scripts.src
+let entries = config.scripts.src
   .map(path => './' + path);
 
-var defaults = {
+let defaults = {
   extensions: ['.js', '.jsx'],
   debug: !config.production,
   entries: entries,
   paths: paths
 };
 
-var options = _.assign({}, watchify.args, defaults);
+let options = _.assign({}, watchify.args, defaults);
 
-var compile = function (watch) {
-  var bundler = browserify(options);
+let compile = (watch) => {
+  let bundler = browserify(options);
 
   if (watch) {
     bundler = watchify(bundler);
@@ -45,10 +45,10 @@ var compile = function (watch) {
       ignore: /(bower_components)|(node_modules)/
     }));
 
-  var rebundle = function () {
+  let rebundle = () => {
     return bundler
       .bundle()
-      .on('error', utils.handleError)
+      .on('error', handleError)
       .pipe(source('main.js'))
       .pipe(buffer())
       .pipe(gulpif(config.production, stripDebug()))
@@ -57,13 +57,13 @@ var compile = function (watch) {
   };
 
   if (watch) {
-    bundler.on('update', function () {
+    bundler.on('update', () => {
       gutil.log(`Starting '${chalk.cyan('watchify')}'...`);
       rebundle();
     });
 
-    bundler.on('time', function (time) {
-      var seconds = (Math.round(time / 10) / 100) + ' s',
+    bundler.on('time', (time) => {
+      let seconds = (Math.round(time / 10) / 100) + ' s',
         taskName = chalk.cyan('watchify'),
         taskTime = chalk.magenta(seconds);
 
@@ -74,14 +74,14 @@ var compile = function (watch) {
   return rebundle();
 };
 
-var watch = function () {
+let watch = () => {
   return compile(true);
 };
 
-gulp.task('browserify', function () {
+gulp.task('browserify', () => {
   return compile();
 });
 
-gulp.task('watchify', function () {
+gulp.task('watchify', () => {
   return watch();
 });
