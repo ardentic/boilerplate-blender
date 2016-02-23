@@ -1,16 +1,14 @@
 
-var notify = require('gulp-notify');
-var config = require('./config');
+import notify from 'gulp-notify';
+import config from './config';
 
-module.exports = {
-  handleError: function (error) {
-    if (!config.production) {
-      notify.onError({
-        title: 'Blender',
-        message: '<%= error.message %>'
-      })(error);
-    }
-
-    this.emit('end');
+export function handleError (error) {
+  if (!config.production) {
+    notify.onError({
+      title: 'Blender',
+      message: '<%= error.message %>'
+    })(error);
   }
-};
+
+  this.emit('end');
+}
