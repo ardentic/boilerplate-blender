@@ -25,5 +25,10 @@ let handleResults = (results) => {
   }
 };
 
-gulp.task('lint', () => lint().pipe(eslint.results(handleResults)));
-gulp.task('test-lint', () => lint().pipe(eslint.failAfterError()));
+gulp.task('lint', () => {
+  return lint().pipe(eslint.results(handleResults));
+});
+
+gulp.task('test-lint', () => {
+  return lint().pipe(eslint.failAfterError());
+});
