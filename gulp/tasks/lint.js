@@ -4,13 +4,13 @@ import path from 'path';
 import eslint from 'gulp-eslint';
 import notifier from 'node-notifier';
 
-import utils from '../utils';
 import config from '../config';
+import { handleError } from '../utils';
 
 let lint = () => {
   return gulp.src(config.lint.src)
     .pipe(eslint())
-    .on('error', utils.handleError)
+    .on('error', handleError)
     .pipe(eslint.format('stylish'));
 };
 
