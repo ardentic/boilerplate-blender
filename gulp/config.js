@@ -1,7 +1,7 @@
 
-var gutil = require('gulp-util');
+import gutil from 'gulp-util';
 
-module.exports = {
+export default {
   production: gutil.env.production || process.env.NODE_ENV === 'production' || false,
 
   styles: {

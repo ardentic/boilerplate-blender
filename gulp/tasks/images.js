@@ -1,13 +1,13 @@
 
-var gulp = require('gulp'),
-  changed = require('gulp-changed');
+import gulp from 'gulp';
+import changed from 'gulp-changed';
 
-var utils = require('../utils'),
-  config = require('../config');
+import config from '../config';
+import { handleError } from '../utils';
 
-gulp.task('images', function () {
+gulp.task('images', () => {
   return gulp.src(config.images.src)
     .pipe(changed(config.images.dest))
     .pipe(gulp.dest(config.images.dest))
-    .on('error', utils.handleError);
+    .on('error', handleError);
 });

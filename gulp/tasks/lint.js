@@ -4,31 +4,31 @@ import path from 'path';
 import eslint from 'gulp-eslint';
 import notifier from 'node-notifier';
 
-import utils from '../utils';
 import config from '../config';
+import { handleError } from '../utils';
 
-let lint = function () {
+let lint = () => {
   return gulp.src(config.lint.src)
     .pipe(eslint())
-    .on('error', utils.handleError)
+    .on('error', handleError)
     .pipe(eslint.format('stylish'));
 };
 
-gulp.task('lint', function () {
-  return lint()
-    .pipe(eslint.results(function (results) {
-      if (results.errorCount > 0) {
-        notifier.notify({
-          title: 'Blender',
-          message: 'Linting errors: ' + results.errorCount,
-          icon: path.join(require.resolve('gulp-notify'), '..', 'assets', 'gulp-error.png'),
-          sound: 'Frog'
-        });
-      }
-    }));
+let handleResults = (results) => {
+  if (results.errorCount > 0) {
+    notifier.notify({
+      title: 'Blender',
+      message: 'Linting errors: ' + results.errorCount,
+      icon: path.join(require.resolve('gulp-notify'), '..', 'assets', 'gulp-error.png'),
+      sound: 'Frog'
+    });
+  }
+};
+
+gulp.task('lint', () => {
+  return lint().pipe(eslint.results(handleResults));
 });
 
-gulp.task('test-lint', function () {
-  return lint()
-    .pipe(eslint.failAfterError());
+gulp.task('test-lint', () => {
+  return lint().pipe(eslint.failAfterError());
 });

@@ -1,9 +1,9 @@
 
-var del = require('del'),
-  gulp = require('gulp');
+import del from 'del';
+import gulp from 'gulp';
 
-var config = require('../config');
+import config from '../config';
 
-gulp.task('clean', function (callback) {
+gulp.task('clean', (callback) => {
   del(config.clean.src, callback);
 });
