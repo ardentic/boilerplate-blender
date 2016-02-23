@@ -1,19 +1,19 @@
 
-var gulp = require('gulp'),
-  gulpif = require('gulp-if'),
-  stylus = require('gulp-stylus'),
-  postcss = require('gulp-postcss'),
-  cssnano = require('gulp-cssnano'),
-  mqpacker = require('css-mqpacker'),
-  autoprefixer = require('autoprefixer'),
-  sourcemaps = require('gulp-sourcemaps'),
-  fontWeights = require('postcss-font-weights');
+import gulp from 'gulp';
+import gulpif from 'gulp-if';
+import stylus from 'gulp-stylus';
+import postcss from 'gulp-postcss';
+import cssnano from 'gulp-cssnano';
+import mqpacker from 'css-mqpacker';
+import autoprefixer from 'autoprefixer';
+import sourcemaps from 'gulp-sourcemaps';
+import fontWeights from 'postcss-font-weights';
 
-var utils = require('../utils'),
-  config = require('../config');
+import config from '../config';
+import { handleError } from '../utils';
 
-gulp.task('stylus', function () {
-  var settings = {
+gulp.task('stylus', () => {
+  let settings = {
     stylus: {
       compress: false,
       'include css': true,
@@ -40,9 +40,9 @@ gulp.task('stylus', function () {
     .src(config.styles.src)
     .pipe(gulpif(!config.production, sourcemaps.init()))
     .pipe(stylus(settings.stylus))
-    .on('error', utils.handleError)
+    .on('error', handleError)
     .pipe(postcss(settings.processors))
-    .on('error', utils.handleError)
+    .on('error', handleError)
     .pipe(gulpif(!config.production, sourcemaps.write()))
     .pipe(gulpif(config.production, cssnano()))
     .pipe(gulp.dest(config.styles.dest));
