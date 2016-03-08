@@ -13,12 +13,12 @@ gulp.task('watch', ['watchify'], () => {
 });
 
 gulp.task('test', [
-  'test-lint'
+  'test-eslint'
 ]);
 
 gulp.task('default', [
-  'lint',
   'fonts',
+  'eslint',
   'images',
   'stylus',
   'modernizr',
