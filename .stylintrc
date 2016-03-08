@@ -1,0 +1,104 @@
+{
+  "blocks": {
+    "expect": "always",
+    "error": true
+  },
+  "brackets": {
+    "expect": "always",
+    "error": true
+  },
+  "colons": {
+    "expect": "always",
+    "error": true
+  },
+  "colors": false,
+  "commaSpace": {
+    "expect": "always",
+    "error": true
+  },
+  "commentSpace": {
+    "expect": "always",
+    "error": true
+  },
+  "cssLiteral": "never",
+  "depthLimit": false,
+  "duplicates": {
+    "expect": true,
+    "error": true
+  },
+  "efficient": {
+    "expect": "always",
+    "error": true
+  },
+  "extendPref": {
+    "expect": "@extends",
+    "error": true
+  },
+  "globalDupe": false,
+  "indentPref": {
+    "expect": 2,
+    "error": true
+  },
+  "leadingZero": {
+    "expect": "always",
+    "error": true
+  },
+  "maxErrors": false,
+  "maxWarnings": false,
+  "mixed": false,
+  "namingConvention": {
+    "expect": "camelCase",
+    "error": true
+  },
+  "namingConventionStrict": false,
+  "none": {
+    "expect": "always",
+    "error": true
+  },
+  "noImportant": {
+    "expect": true,
+    "error": true
+  },
+  "parenSpace": {
+    "expect": false,
+    "error": true
+  },
+  "placeholders": {
+    "expect": "always",
+    "error": true
+  },
+  "prefixVarsWithDollar": {
+    "expect": "always",
+    "error": true
+  },
+  "quotePref": {
+    "expect": "single",
+    "error": false
+  },
+  "semicolons": {
+    "expect": "always",
+    "error": true
+  },
+  "sortOrder": {
+    "expect": "grouped",
+    "error": true
+  },
+  "stackedProperties": {
+    "expect": "never",
+    "error": true
+  },
+  "trailingWhitespace": {
+    "expect": "never",
+    "error": true
+  },
+  "universal": false,
+  "valid": {
+    "expect": true,
+    "error": true
+  },
+  "zeroUnits": {
+    "expect": "never",
+    "error": true
+  },
+  "zIndexNormalize": false
+}
