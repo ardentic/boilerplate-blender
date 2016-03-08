@@ -25,7 +25,7 @@ export default {
     dest: 'public/images'
   },
 
-  lint: {
+  eslint: {
     src: [
       'assets/scripts/**/*.{js,jsx}',
       'gulp/**/*.{js,jsx}'

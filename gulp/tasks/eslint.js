@@ -8,7 +8,7 @@ import config from '../config';
 import { handleError } from '../utils';
 
 let lint = () => {
-  return gulp.src(config.lint.src)
+  return gulp.src(config.eslint.src)
     .pipe(eslint())
     .on('error', handleError)
     .pipe(eslint.format('stylish'));
