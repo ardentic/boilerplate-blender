@@ -11,6 +11,7 @@ import buffer from 'vinyl-buffer';
 import envify from 'envify/custom';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
+import sourcemaps from 'gulp-sourcemaps';
 import stripDebug from 'gulp-strip-debug';
 
 import config from '../config';
@@ -51,8 +52,10 @@ let compile = (watch) => {
       .on('error', handleError)
       .pipe(source('main.js'))
       .pipe(buffer())
+      .pipe(gulpif(!config.production, sourcemaps.init({ loadMaps: true })))
       .pipe(gulpif(config.production, stripDebug()))
       .pipe(gulpif(config.production, uglify()))
+      .pipe(gulpif(!config.production, sourcemaps.write('.')))
       .pipe(gulp.dest(config.scripts.dest));
   };
 

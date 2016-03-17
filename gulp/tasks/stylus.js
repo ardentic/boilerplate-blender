@@ -43,7 +43,7 @@ gulp.task('stylus', () => {
     .on('error', handleError)
     .pipe(postcss(settings.processors))
     .on('error', handleError)
-    .pipe(gulpif(!config.production, sourcemaps.write()))
     .pipe(gulpif(config.production, cssnano()))
+    .pipe(gulpif(!config.production, sourcemaps.write('.')))
     .pipe(gulp.dest(config.styles.dest));
 });
