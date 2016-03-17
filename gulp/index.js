@@ -9,7 +9,7 @@ gulp.task('watch', ['watchify'], () => {
   gulp.watch(['assets/styles/**/*'], ['stylus']);
   gulp.watch(['assets/images/**/*'], ['images']);
   gulp.watch(['assets/fonts/**/*'], ['fonts']);
-  gulp.watch(['assets/scripts/**/*'], ['lint']);
+  gulp.watch(['assets/scripts/**/*'], ['eslint']);
 });
 
 gulp.task('test', [
