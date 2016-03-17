@@ -3,8 +3,8 @@
   "repository": "https://github.com/ardentic/boilerplate-blender",
   "license": "MIT",
   "engines": {
-    "node": "5.6.x",
-    "npm": "3.6.x"
+    "node": "5.x.x",
+    "npm": "3.x.x"
   },
   "scripts": {
     "postinstall": "gulp",
