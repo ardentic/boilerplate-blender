@@ -43,24 +43,12 @@ export default {
     }
   },
 
-  rev: {
-    src: [
-      'public/**/*.{css,js}',
-      '!public/build/**/*'
-    ],
-
-    dest: 'public/build',
-
-    base: 'public'
-  },
-
   clean: {
     src: [
-      'public/fonts',
-      'public/build',
-      'public/images',
       'public/styles',
-      'public/scripts'
+      'public/scripts',
+      'public/fonts',
+      'public/images'
     ]
   }
 };

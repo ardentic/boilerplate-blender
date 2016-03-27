@@ -34,7 +34,6 @@
     "gulp-modernizr": "^1.0.0-alpha",
     "gulp-notify": "^2.2.0",
     "gulp-postcss": "^6.1.0",
-    "gulp-rev": "^7.0.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-strip-debug": "^1.1.0",
     "gulp-stylus": "^2.3.1",
@@ -45,7 +44,6 @@
     "normalize.css": "^3.0.3",
     "postcss-font-weights": "^2.0.1",
     "require-dir": "^0.3.0",
-    "rev-del": "^1.0.5",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
