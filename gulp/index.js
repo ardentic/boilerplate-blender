@@ -12,6 +12,11 @@ gulp.task('watch', ['watchify'], () => {
   gulp.watch(['assets/scripts/**/*'], ['eslint']);
 });
 
+gulp.task('server', [
+  'php',
+  'watch'
+]);
+
 gulp.task('test', [
   'test-eslint'
 ]);
