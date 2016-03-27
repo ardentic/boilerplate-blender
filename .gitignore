@@ -4,11 +4,10 @@
 /node_modules
 /bower_components
 /vendor
-/public/fonts
-/public/build
-/public/images
 /public/styles
 /public/scripts
+/public/fonts
+/public/images
 
 #
 # files
