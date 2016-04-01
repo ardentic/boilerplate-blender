@@ -11,7 +11,6 @@ export default {
 
   scripts: {
     src: ['assets/scripts/main.js'],
-    paths: ['assets/scripts'],
     dest: 'public/scripts'
   },
 
