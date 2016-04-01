@@ -6,29 +6,25 @@ import browserSync from 'browser-sync';
 import connect from 'gulp-connect-php';
 
 gulp.task('php', () => {
-  console.log(gutil.env);
-  let serverPort = 8000 || gutil.env.port;
+  let serverPort = gutil.env.port || 8000;
   let proxyPort = 9000;
 
-  let settings = {
-    hostname: '0.0.0.0',
-    base: gutil.env.base || 'public',
-    port: server,
-    keepalive: false
-  };
+  portfinder.basePort = proxyPort;
 
-  portfinder.basePort = 8040;
+  portfinder.getPort((error, port) => {
+    let settings = {
+      hostname: '0.0.0.0',
+      base: gutil.env.base || 'public',
+      keepalive: false,
+      port: port
+    };
 
-  portfinder.getPort(function (err, port) {
-    console.log(err);
-    console.log(port);
+    browserSync({
+      proxy: `0.0.0.0:${port}`,
+      port: serverPort,
+      open: false
+    });
+
+    connect.server(settings);
   });
-
-  /*browserSync({
-    proxy: '0.0.0.0:9000',
-    open: false,
-    port: gutil.env.port || 8000
-  });*/
-
-  connect.server(settings);
 });
