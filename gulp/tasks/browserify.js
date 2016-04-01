@@ -6,10 +6,12 @@ import gulpif from 'gulp-if';
 import gutil from 'gulp-util';
 import watchify from 'watchify';
 import babelify from 'babelify';
+import filter from 'gulp-filter';
 import uglify from 'gulp-uglify';
 import buffer from 'vinyl-buffer';
 import envify from 'envify/custom';
 import browserify from 'browserify';
+import { reload } from 'browser-sync';
 import source from 'vinyl-source-stream';
 import sourcemaps from 'gulp-sourcemaps';
 import stripDebug from 'gulp-strip-debug';
@@ -51,7 +53,9 @@ let compile = (watch) => {
       .pipe(gulpif(config.production, stripDebug()))
       .pipe(gulpif(config.production, uglify()))
       .pipe(gulpif(!config.production, sourcemaps.write('.')))
-      .pipe(gulp.dest(config.scripts.dest));
+      .pipe(gulp.dest(config.scripts.dest))
+      .pipe(filter('**/*.js'))
+      .pipe(reload({ stream: true }));
   };
 
   if (watch) {
