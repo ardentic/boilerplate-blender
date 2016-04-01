@@ -17,18 +17,13 @@ import stripDebug from 'gulp-strip-debug';
 import config from '../config';
 import { handleError } from '../utils';
 
-let paths = ['node_modules']
-  .concat(config.scripts.paths)
-  .map(path => './' + path);
-
 let entries = config.scripts.src
   .map(path => './' + path);
 
 let defaults = {
   extensions: ['.js', '.jsx'],
   debug: !config.production,
-  entries: entries,
-  paths: paths
+  entries: entries
 };
 
 let options = _.assign({}, watchify.args, defaults);
