@@ -6,9 +6,10 @@ import requireDir from 'require-dir';
 requireDir('./tasks');
 
 gulp.task('watch', ['watchify'], () => {
+  gulp.watch(['assets/fonts/**/*'], ['fonts']);
   gulp.watch(['assets/styles/**/*'], ['stylus']);
   gulp.watch(['assets/images/**/*'], ['images']);
-  gulp.watch(['assets/fonts/**/*'], ['fonts']);
+  gulp.watch(['assets/styles/**/*'], ['stylint']);
   gulp.watch(['assets/scripts/**/*'], ['eslint']);
 });
 
@@ -18,7 +19,8 @@ gulp.task('server', [
 ]);
 
 gulp.task('test', [
-  'test-eslint'
+  'test-eslint',
+  'test-stylint'
 ]);
 
 gulp.task('default', [
@@ -26,6 +28,7 @@ gulp.task('default', [
   'eslint',
   'images',
   'stylus',
+  'stylint',
   'modernizr',
   'browserify'
 ]);

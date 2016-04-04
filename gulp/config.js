@@ -31,6 +31,12 @@ export default {
     ]
   },
 
+  stylint: {
+    src: [
+      'assets/styles/**/*.styl'
+    ]
+  },
+
   modernizr: {
     src: ['assets/scripts/**/*'],
     dest: 'public/scripts/vendor',
