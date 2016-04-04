@@ -14,7 +14,7 @@ gulp.task('php', () => {
   portfinder.getPort((error, port) => {
     let settings = {
       hostname: '0.0.0.0',
-      base: gutil.env.base || 'public',
+      base: gutil.env.base || '.',
       keepalive: false,
       port: port
     };
