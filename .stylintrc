@@ -11,7 +11,6 @@
     "expect": "always",
     "error": true
   },
-  "colors": false,
   "commaSpace": {
     "expect": "always",
     "error": true
@@ -20,8 +19,10 @@
     "expect": "always",
     "error": true
   },
-  "cssLiteral": "never",
-  "depthLimit": false,
+  "cssLiteral": {
+    "expect": "never",
+    "error": true
+  },
   "duplicates": {
     "expect": true,
     "error": true
@@ -34,7 +35,6 @@
     "expect": "@extends",
     "error": true
   },
-  "globalDupe": false,
   "indentPref": {
     "expect": 2,
     "error": true
@@ -43,14 +43,10 @@
     "expect": "always",
     "error": true
   },
-  "maxErrors": false,
-  "maxWarnings": false,
-  "mixed": false,
   "namingConvention": {
     "expect": "camelCase",
     "error": true
   },
-  "namingConventionStrict": false,
   "none": {
     "expect": "always",
     "error": true
@@ -79,10 +75,6 @@
     "expect": "always",
     "error": true
   },
-  "sortOrder": {
-    "expect": "grouped",
-    "error": true
-  },
   "stackedProperties": {
     "expect": "never",
     "error": true
@@ -91,7 +83,6 @@
     "expect": "never",
     "error": true
   },
-  "universal": false,
   "valid": {
     "expect": true,
     "error": true
@@ -100,5 +91,15 @@
     "expect": "never",
     "error": true
   },
-  "zIndexNormalize": false
+
+  "mixed": false,
+  "colors": false,
+  "universal": false,
+  "sortOrder": false,
+  "maxErrors": false,
+  "globalDupe": false,
+  "depthLimit": false,
+  "maxWarnings": false,
+  "zIndexNormalize": false,
+  "namingConventionStrict": false
 }
