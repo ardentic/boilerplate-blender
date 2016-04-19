@@ -28,3 +28,12 @@ cp .env.example .env
 * `gulp --production` - Build project in production mode
 * `gulp clean` - Clean all compiled and bundled assets in public folder
 * `gulp watch` - Watch for changes and build project in development mode
+* `gulp server` - Start PHP server connected with browser sync
+
+## Server
+
+Only running `gulp server` will start the server in the current working directory on port 8000. Both directory and the port can passed as parameters to `gulp server`.
+
+```
+gulp server --port=8010 --base=public
+```
