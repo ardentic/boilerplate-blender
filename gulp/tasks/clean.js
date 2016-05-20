@@ -5,5 +5,5 @@ import gulp from 'gulp';
 import config from '../config';
 
 gulp.task('clean', (callback) => {
-  del(config.clean.src, callback);
+  return del(config.clean.src, callback);
 });
