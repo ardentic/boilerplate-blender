@@ -16,6 +16,10 @@
     "react"
   ],
 
+  "globals": {
+    "Modernizr": true
+  },
+
   "rules": {
     "brace-style": [2, "1tbs"],
     "camelcase": [2, { "properties": "always" }],
