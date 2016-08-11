@@ -45,4 +45,4 @@ PORT=8010
 DOCUMENT_ROOT=public
 ```
 
-The environment variables has precedence over the command line arguments.
+The command line arguments has precedence over the environment variables.
