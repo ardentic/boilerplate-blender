@@ -21,11 +21,15 @@ gulp.task('test', [
   'test-eslint'
 ]);
 
-gulp.task('default', [
+gulp.task('build', [
   'fonts',
   'eslint',
   'images',
   'stylus',
   'modernizr',
   'browserify'
+]);
+
+gulp.task('default', [
+  'build'
 ]);
