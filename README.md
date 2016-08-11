@@ -28,6 +28,8 @@ cp .env.example .env
 * `npm run build` - Build project to public folder
 * `npm run clean` - Clean all compiled and bundled assets in public folder
 
+When running `npm run build` it will use the `NODE_ENV` to determine whether or not the build should be considered a production or development build.
+
 ## Server
 
 Only running `npm start` will start the server in the current working directory on port 8000. Both directory and the port can passed as parameters to `npm start`.
