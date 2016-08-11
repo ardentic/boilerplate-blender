@@ -24,16 +24,25 @@ cp .env.example .env
 
 ## Usage
 
-* `gulp` - Build project in development mode
-* `gulp --production` - Build project in production mode
-* `gulp clean` - Clean all compiled and bundled assets in public folder
-* `gulp watch` - Watch for changes and build project in development mode
-* `gulp server` - Start PHP server connected with browser sync
+* `npm start` - Start PHP server connected with browser sync
+* `npm run build` - Build project to public folder
+* `npm run clean` - Clean all compiled and bundled assets in public folder
+
+When running `npm run build` it will use the `NODE_ENV` to determine whether or not the build should be considered a production or development build.
 
 ## Server
 
-Only running `gulp server` will start the server in the current working directory on port 8000. Both directory and the port can passed as parameters to `gulp server`.
+Only running `npm start` will start the server in the current working directory on port 8000. Both directory and the port can passed as parameters to `npm start`.
 
 ```
-gulp server --port=8010 --base=public
+npm start -- --port=8010 --documentRoot=public
 ```
+
+It is also possible to specify the port and root directory as environment variables in the `.env` file.
+
+```
+PORT=8010
+DOCUMENT_ROOT=public
+```
+
+The command line arguments has precedence over the environment variables.

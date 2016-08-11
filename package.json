@@ -1,14 +1,22 @@
 {
-  "name": "boilerplate-blender",
-  "repository": "https://github.com/ardentic/boilerplate-blender",
+  "name": "Blender",
+  "version": "1.0.0",
+  "description": "Simple boilerplate to quickly start web projects using modern standards. Uses Gulp to run Stylus, PostCSS, ESLint, Browserify and Modernizr.",
   "license": "MIT",
   "engines": {
-    "node": "6.2.1",
-    "npm": "3.9.3"
+    "node": "6.3.1",
+    "npm": "3.10.3"
   },
   "scripts": {
-    "postinstall": "gulp",
-    "test": "gulp test"
+    "test": "gulp test",
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "start": "gulp server",
+    "postinstall": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardentic/boilerplate-blender.git"
   },
   "dependencies": {
     "@ardentic/stylus-jiggers": "1.0.0",

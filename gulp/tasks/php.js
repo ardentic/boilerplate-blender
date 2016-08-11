@@ -6,7 +6,7 @@ import browserSync from 'browser-sync';
 import connect from 'gulp-connect-php';
 
 gulp.task('php', () => {
-  let serverPort = gutil.env.port || 8000;
+  let serverPort = gutil.env.port || process.env.PORT || 8000;
   let proxyPort = 9000;
 
   portfinder.basePort = proxyPort;
@@ -14,7 +14,7 @@ gulp.task('php', () => {
   portfinder.getPort((error, port) => {
     let settings = {
       hostname: '0.0.0.0',
-      base: gutil.env.base || '.',
+      base: gutil.env.documentRoot || process.env.DOCUMENT_ROOT || '.',
       keepalive: false,
       port: port
     };
