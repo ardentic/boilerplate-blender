@@ -1,8 +1,8 @@
 
-import del from 'del';
-import gulp from 'gulp';
+const del = require('del');
+const gulp = require('gulp');
 
-import config from '../config';
+const config = require('../config');
 
 gulp.task('clean', (callback) => {
   return del(config.clean.src, callback);

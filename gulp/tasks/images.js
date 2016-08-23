@@ -1,9 +1,9 @@
 
-import gulp from 'gulp';
-import changed from 'gulp-changed';
+const gulp = require('gulp');
+const changed = require('gulp-changed');
 
-import config from '../config';
-import { handleError } from '../utils';
+const config = require('../config');
+const { handleError } = require('../utils');
 
 gulp.task('images', () => {
   return gulp.src(config.images.src)

@@ -1,8 +1,10 @@
 
-import gulp from 'gulp';
-import requireDir from 'require-dir';
+require('dotenv').config({ silent: true });
 
-// Load additional gulp task
+const gulp = require('gulp');
+const requireDir = require('require-dir');
+
+// Load gulp tasks
 requireDir('./tasks');
 
 gulp.task('watch', ['watchify'], () => {
