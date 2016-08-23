@@ -1,12 +1,12 @@
 
-import gulp from 'gulp';
-import gulpif from 'gulp-if';
-import uglify from 'gulp-uglify';
-import concat from 'gulp-concat';
-import modernizr from 'gulp-modernizr';
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const modernizr = require('gulp-modernizr');
 
-import config from '../config';
-import { handleError } from '../utils';
+const config = require('../config');
+const { handleError } = require('../utils');
 
 let sources = config.modernizr.src.map(source => './' + source);
 
