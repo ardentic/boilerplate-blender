@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "@ardentic/flair",
+    "@ardentic/flair/es6",
+    "@ardentic/flair/node"
+  ]
+}
