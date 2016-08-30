@@ -19,18 +19,19 @@ import stripDebug from 'gulp-strip-debug';
 import config from '../config';
 import { handleError } from '../utils';
 
-let entries = config.scripts.src
-  .map(path => './' + path);
+const entries = config.scripts.src.map((path) => {
+  return `./${path}`;
+});
 
-let defaults = {
+const defaults = {
   extensions: ['.js', '.jsx'],
   debug: !config.production,
-  entries: entries
+  entries
 };
 
-let options = _.assign({}, watchify.args, defaults);
+const options = _.assign({}, watchify.args, defaults);
 
-let compile = (watch) => {
+const compile = (watch) => {
   let bundler = browserify(options);
 
   if (watch) {
@@ -39,11 +40,9 @@ let compile = (watch) => {
 
   bundler
     .transform(envify(process.env))
-    .transform(babelify.configure({
-      ignore: /(bower_components)|(node_modules)/
-    }));
+    .transform(babelify.configure({ ignore: /(bower_components)|(node_modules)/ }));
 
-  let rebundle = () => {
+  const rebundle = () => {
     return bundler
       .bundle()
       .on('error', handleError)
@@ -65,9 +64,9 @@ let compile = (watch) => {
     });
 
     bundler.on('time', (time) => {
-      let seconds = (Math.round(time / 10) / 100) + ' s',
-        taskName = chalk.cyan('watchify'),
-        taskTime = chalk.magenta(seconds);
+      const seconds = `${Math.round(time / 10) / 100} s`;
+      const taskName = chalk.cyan('watchify');
+      const taskTime = chalk.magenta(seconds);
 
       gutil.log(`Finished '${taskName}' after ${taskTime}`);
     });
@@ -76,7 +75,7 @@ let compile = (watch) => {
   return rebundle();
 };
 
-let watch = () => {
+const watch = () => {
   return compile(true);
 };
 

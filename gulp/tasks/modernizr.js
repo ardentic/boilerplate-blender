@@ -8,7 +8,9 @@ import modernizr from 'gulp-modernizr';
 import config from '../config';
 import { handleError } from '../utils';
 
-let sources = config.modernizr.src.map(source => './' + source);
+const sources = config.modernizr.src.map((source) => {
+  return `./${source}`;
+});
 
 gulp.task('modernizr', () => {
   return gulp.src(sources)
