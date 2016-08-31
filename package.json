@@ -19,7 +19,7 @@
     "url": "git+https://github.com/ardentic/boilerplate-blender.git"
   },
   "dependencies": {
-    "@ardentic/eslint-config-flair": "1.0.0",
+    "@ardentic/eslint-config-flair": "1.0.2",
     "@ardentic/stylus-jiggers": "1.0.0",
     "@ardentic/stylus-mq": "2.0.0",
     "autoprefixer": "6.4.0",
