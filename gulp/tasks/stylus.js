@@ -15,16 +15,16 @@ import config from '../config';
 import { handleError } from '../utils';
 
 gulp.task('stylus', () => {
-  let settings = {
+  const settings = {
     stylus: {
-      compress: false,
+      'compress': false,
       'include css': true,
 
-      paths: [
+      'paths': [
         'node_modules'
       ],
 
-      import: [
+      'import': [
         'normalize.css/normalize.css',
         '@ardentic/stylus-jiggers/jiggers',
         '@ardentic/stylus-mq/mq'

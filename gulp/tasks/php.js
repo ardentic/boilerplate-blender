@@ -6,13 +6,13 @@ import browserSync from 'browser-sync';
 import connect from 'gulp-connect-php';
 
 gulp.task('php', () => {
-  let serverPort = gutil.env.port || process.env.PORT || 8000;
-  let proxyPort = 9000;
+  const serverPort = gutil.env.port || process.env.PORT || 8000;
+  const proxyPort = 9000;
 
   portfinder.basePort = proxyPort;
 
   portfinder.getPort((error, port) => {
-    let settings = {
+    const settings = {
       hostname: '0.0.0.0',
       base: gutil.env.documentRoot || process.env.DOCUMENT_ROOT || '.',
       keepalive: false,

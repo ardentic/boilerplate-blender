@@ -7,18 +7,18 @@ import notifier from 'node-notifier';
 import config from '../config';
 import { handleError } from '../utils';
 
-let lint = () => {
+const lint = () => {
   return gulp.src(config.eslint.src)
     .pipe(eslint())
     .on('error', handleError)
     .pipe(eslint.format('stylish'));
 };
 
-let handleResults = (results) => {
+const handleResults = (results) => {
   if (results.errorCount > 0) {
     notifier.notify({
       title: 'Blender',
-      message: 'Linting errors: ' + results.errorCount,
+      message: `Linting errors: ${results.errorCount}`,
       icon: path.join(require.resolve('gulp-notify'), '..', 'assets', 'gulp-error.png'),
       sound: 'Frog'
     });
