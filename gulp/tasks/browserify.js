@@ -26,7 +26,7 @@ const entries = config.scripts.src.map((path) => {
 const defaults = {
   extensions: ['.js', '.jsx'],
   debug: !config.production,
-  entries
+  entries: entries
 };
 
 const options = _.assign({}, watchify.args, defaults);

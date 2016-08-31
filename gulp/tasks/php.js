@@ -16,7 +16,7 @@ gulp.task('php', () => {
       hostname: '0.0.0.0',
       base: gutil.env.documentRoot || process.env.DOCUMENT_ROOT || '.',
       keepalive: false,
-      port
+      port: port
     };
 
     browserSync({
