@@ -2,7 +2,7 @@
 import notify from 'gulp-notify';
 import config from './config';
 
-export function handleError (error) {
+export const handleError = function (error) {
   if (!config.production) {
     notify.onError({
       title: 'Blender',
@@ -11,4 +11,4 @@ export function handleError (error) {
   }
 
   this.emit('end');
-}
+};
