@@ -11,3 +11,7 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest(config.fonts.dest))
     .on('error', handleError);
 });
+
+gulp.task('watch-fonts', () => {
+  return gulp.watch(['assets/fonts/**/*'], ['fonts']);
+});

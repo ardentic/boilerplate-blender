@@ -51,3 +51,9 @@ gulp.task('stylus', () => {
     .pipe(filter('**/*.css'))
     .pipe(reload({ stream: true }));
 });
+
+gulp.task('watch-stylus', () => {
+  return gulp.watch(['assets/styles/**/*'], ['stylus']);
+});
+
+

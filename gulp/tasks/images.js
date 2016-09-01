@@ -11,3 +11,7 @@ gulp.task('images', () => {
     .pipe(gulp.dest(config.images.dest))
     .on('error', handleError);
 });
+
+gulp.task('watch-images', () => {
+  return gulp.watch(['assets/images/**/*'], ['images']);
+});
