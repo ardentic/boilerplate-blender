@@ -4,7 +4,7 @@ import gutil from 'gulp-util';
 export default {
   production: gutil.env.production || process.env.NODE_ENV === 'production' || false,
 
-  styles: {
+  stylus: {
     src: 'assets/styles/main.styl',
     dest: 'public/styles'
   },
