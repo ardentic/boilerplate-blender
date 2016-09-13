@@ -13,5 +13,5 @@ gulp.task('images', () => {
 });
 
 gulp.task('watch-images', () => {
-  return gulp.watch(['assets/images/**/*'], ['images']);
+  return gulp.watch(taskSettings.images.search, ['images']);
 });

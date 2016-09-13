@@ -13,5 +13,5 @@ gulp.task('fonts', () => {
 });
 
 gulp.task('watch-fonts', () => {
-  return gulp.watch(['assets/fonts/**/*'], ['fonts']);
+  return gulp.watch(taskSettings.fonts.search, ['fonts']);
 });

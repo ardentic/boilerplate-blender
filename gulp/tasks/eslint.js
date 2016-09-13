@@ -34,5 +34,5 @@ gulp.task('test-eslint', () => {
 });
 
 gulp.task('watch-eslint', () => {
-  return gulp.watch(['assets/scripts/**/*'], ['eslint']);
+  return gulp.watch(taskSettings.eslint.search, ['eslint']);
 });

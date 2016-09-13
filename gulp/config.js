@@ -8,7 +8,8 @@ const globalSettings = {
 const taskSettings = {
   stylus: {
     src: 'assets/styles/main.styl',
-    dest: 'public/styles'
+    dest: 'public/styles',
+    search: 'assets/styles/**/*.{css,styl}'
   },
 
   scripts: {
@@ -18,16 +19,22 @@ const taskSettings = {
 
   fonts: {
     src: 'assets/fonts/**/*',
-    dest: 'public/fonts'
+    dest: 'public/fonts',
+    search: 'assets/fonts/**/*'
   },
 
   images: {
     src: 'assets/images/**/*',
-    dest: 'public/images'
+    dest: 'public/images',
+    search: 'assets/images/**/*'
   },
 
   eslint: {
     src: [
+      'assets/scripts/**/*.{js,jsx}',
+      'gulp/**/*.{js,jsx}'
+    ],
+    search: [
       'assets/scripts/**/*.{js,jsx}',
       'gulp/**/*.{js,jsx}'
     ]

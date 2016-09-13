@@ -53,5 +53,5 @@ gulp.task('stylus', () => {
 });
 
 gulp.task('watch-stylus', () => {
-  return gulp.watch(['assets/styles/**/*'], ['stylus']);
+  return gulp.watch(taskSettings.stylus.search, ['stylus']);
 });
