@@ -11,8 +11,8 @@ import autoprefixer from 'autoprefixer';
 import sourcemaps from 'gulp-sourcemaps';
 import fontWeights from 'postcss-font-weights';
 
-import config from '../config';
 import { handleError } from '../utils';
+import { globalSettings, taskSettings } from '../config';
 
 gulp.task('stylus', () => {
   const settings = {
@@ -39,19 +39,19 @@ gulp.task('stylus', () => {
   };
 
   return gulp
-    .src(config.stylus.src)
-    .pipe(gulpif(!config.production, sourcemaps.init()))
+    .src(taskSettings.stylus.src)
+    .pipe(gulpif(!globalSettings.production, sourcemaps.init()))
     .pipe(stylus(settings.stylus))
     .on('error', handleError)
     .pipe(postcss(settings.processors))
     .on('error', handleError)
-    .pipe(gulpif(config.production, cssnano()))
-    .pipe(gulpif(!config.production, sourcemaps.write('.')))
-    .pipe(gulp.dest(config.stylus.dest))
+    .pipe(gulpif(globalSettings.production, cssnano()))
+    .pipe(gulpif(!globalSettings.production, sourcemaps.write('.')))
+    .pipe(gulp.dest(taskSettings.stylus.dest))
     .pipe(filter('**/*.css'))
     .pipe(reload({ stream: true }));
 });
 
 gulp.task('watch-stylus', () => {
-  return gulp.watch(['assets/styles/**/*'], ['stylus']);
+  return gulp.watch(taskSettings.stylus.search, ['stylus']);
 });

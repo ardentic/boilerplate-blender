@@ -16,16 +16,16 @@ import source from 'vinyl-source-stream';
 import sourcemaps from 'gulp-sourcemaps';
 import stripDebug from 'gulp-strip-debug';
 
-import config from '../config';
 import { handleError } from '../utils';
+import { globalSettings, taskSettings } from '../config';
 
-const entries = config.scripts.src.map((path) => {
+const entries = taskSettings.scripts.src.map((path) => {
   return `./${path}`;
 });
 
 const defaults = {
   extensions: ['.js', '.jsx'],
-  debug: !config.production,
+  debug: !globalSettings.production,
   entries: entries
 };
 
@@ -48,11 +48,11 @@ const compile = (watch) => {
       .on('error', handleError)
       .pipe(source('main.js'))
       .pipe(buffer())
-      .pipe(gulpif(!config.production, sourcemaps.init({ loadMaps: true })))
-      .pipe(gulpif(config.production, stripDebug()))
-      .pipe(gulpif(config.production, uglify()))
-      .pipe(gulpif(!config.production, sourcemaps.write('.')))
-      .pipe(gulp.dest(config.scripts.dest))
+      .pipe(gulpif(!globalSettings.production, sourcemaps.init({ loadMaps: true })))
+      .pipe(gulpif(globalSettings.production, stripDebug()))
+      .pipe(gulpif(globalSettings.production, uglify()))
+      .pipe(gulpif(!globalSettings.production, sourcemaps.write('.')))
+      .pipe(gulp.dest(taskSettings.scripts.dest))
       .pipe(filter('**/*.js'))
       .pipe(reload({ stream: true }));
   };
