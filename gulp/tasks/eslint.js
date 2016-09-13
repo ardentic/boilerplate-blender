@@ -32,3 +32,7 @@ gulp.task('eslint', () => {
 gulp.task('test-eslint', () => {
   return lint().pipe(eslint.failAfterError());
 });
+
+gulp.task('watch-eslint', () => {
+  return gulp.watch(['assets/scripts/**/*'], ['eslint']);
+});
