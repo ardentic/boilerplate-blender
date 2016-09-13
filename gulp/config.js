@@ -1,9 +1,11 @@
 
 import gutil from 'gulp-util';
 
-export default {
-  production: gutil.env.production || process.env.NODE_ENV === 'production' || false,
+const globalSettings = {
+  production: gutil.env.production || process.env.NODE_ENV === 'production' || false
+};
 
+const taskSettings = {
   stylus: {
     src: 'assets/styles/main.styl',
     dest: 'public/styles'
@@ -51,3 +53,5 @@ export default {
     ]
   }
 };
+
+export { taskSettings, globalSettings };

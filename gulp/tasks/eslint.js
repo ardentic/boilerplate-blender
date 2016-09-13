@@ -4,11 +4,11 @@ import path from 'path';
 import eslint from 'gulp-eslint';
 import notifier from 'node-notifier';
 
-import config from '../config';
 import { handleError } from '../utils';
+import { taskSettings } from '../config';
 
 const lint = () => {
-  return gulp.src(config.eslint.src)
+  return gulp.src(taskSettings.eslint.src)
     .pipe(eslint())
     .on('error', handleError)
     .pipe(eslint.format('stylish'));
