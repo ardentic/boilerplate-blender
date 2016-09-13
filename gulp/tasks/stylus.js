@@ -39,7 +39,7 @@ gulp.task('stylus', () => {
   };
 
   return gulp
-    .src(config.styles.src)
+    .src(config.stylus.src)
     .pipe(gulpif(!config.production, sourcemaps.init()))
     .pipe(stylus(settings.stylus))
     .on('error', handleError)
@@ -47,7 +47,11 @@ gulp.task('stylus', () => {
     .on('error', handleError)
     .pipe(gulpif(config.production, cssnano()))
     .pipe(gulpif(!config.production, sourcemaps.write('.')))
-    .pipe(gulp.dest(config.styles.dest))
+    .pipe(gulp.dest(config.stylus.dest))
     .pipe(filter('**/*.css'))
     .pipe(reload({ stream: true }));
+});
+
+gulp.task('watch-stylus', () => {
+  return gulp.watch(['assets/styles/**/*'], ['stylus']);
 });
