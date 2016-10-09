@@ -1,9 +1,9 @@
 
 import notify from 'gulp-notify';
-import config from './config';
+import { globalSettings } from './config';
 
 export const handleError = function (error) {
-  if (!config.production) {
+  if (!globalSettings.production) {
     notify.onError({
       title: 'Blender',
       message: '<%= error.message %>'
