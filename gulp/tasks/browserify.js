@@ -1,23 +1,23 @@
 
-import _ from 'lodash';
-import gulp from 'gulp';
-import chalk from 'chalk';
-import gulpif from 'gulp-if';
-import gutil from 'gulp-util';
-import watchify from 'watchify';
-import babelify from 'babelify';
-import filter from 'gulp-filter';
-import uglify from 'gulp-uglify';
-import buffer from 'vinyl-buffer';
-import envify from 'envify/custom';
-import browserify from 'browserify';
-import { reload } from 'browser-sync';
-import source from 'vinyl-source-stream';
-import sourcemaps from 'gulp-sourcemaps';
-import stripDebug from 'gulp-strip-debug';
+const _ = require('lodash');
+const gulp = require('gulp');
+const chalk = require('chalk');
+const gulpif = require('gulp-if');
+const gutil = require('gulp-util');
+const watchify = require('watchify');
+const babelify = require('babelify');
+const filter = require('gulp-filter');
+const uglify = require('gulp-uglify');
+const buffer = require('vinyl-buffer');
+const envify = require('envify/custom');
+const browserify = require('browserify');
+const { reload } = require('browser-sync');
+const source = require('vinyl-source-stream');
+const sourcemaps = require('gulp-sourcemaps');
+const stripDebug = require('gulp-strip-debug');
 
-import { handleError } from '../utils';
-import { globalSettings, taskSettings } from '../config';
+const { handleError } = require('../utils');
+const { taskSettings, globalSettings } = require('../config');
 
 const entries = taskSettings.scripts.src.map((path) => {
   return `./${path}`;

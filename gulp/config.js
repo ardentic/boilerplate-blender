@@ -1,5 +1,5 @@
 
-import gutil from 'gulp-util';
+const gutil = require('gulp-util');
 
 const globalSettings = {
   production: gutil.env.production || process.env.NODE_ENV === 'production' || false
@@ -61,4 +61,7 @@ const taskSettings = {
   }
 };
 
-export { taskSettings, globalSettings };
+module.exports = {
+  taskSettings: taskSettings,
+  globalSettings: globalSettings
+};
