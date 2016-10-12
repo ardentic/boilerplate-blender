@@ -1,9 +1,9 @@
 
-import gulp from 'gulp';
-import changed from 'gulp-changed';
+const gulp = require('gulp');
+const changed = require('gulp-changed');
 
-import { handleError } from '../utils';
-import { taskSettings } from '../config';
+const { handleError } = require('../utils');
+const { taskSettings } = require('../config');
 
 gulp.task('fonts', () => {
   return gulp.src(taskSettings.fonts.src)

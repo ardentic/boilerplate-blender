@@ -1,8 +1,8 @@
 
-import notify from 'gulp-notify';
-import { globalSettings } from './config';
+const notify = require('gulp-notify');
+const { globalSettings } = require('./config');
 
-export const handleError = function (error) {
+const handleError = (error) => {
   if (!globalSettings.production) {
     notify.onError({
       title: 'Blender',
@@ -11,4 +11,8 @@ export const handleError = function (error) {
   }
 
   this.emit('end');
+};
+
+module.exports = {
+  handleError: handleError
 };

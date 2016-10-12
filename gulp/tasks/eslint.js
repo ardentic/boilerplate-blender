@@ -1,11 +1,11 @@
 
-import gulp from 'gulp';
-import path from 'path';
-import eslint from 'gulp-eslint';
-import notifier from 'node-notifier';
+const gulp = require('gulp');
+const path = require('path');
+const eslint = require('gulp-eslint');
+const notifier = require('node-notifier');
 
-import { handleError } from '../utils';
-import { taskSettings } from '../config';
+const { handleError } = require('../utils');
+const { taskSettings } = require('../config');
 
 const lint = () => {
   return gulp.src(taskSettings.eslint.src)

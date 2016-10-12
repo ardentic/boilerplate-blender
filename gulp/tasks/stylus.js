@@ -1,18 +1,18 @@
 
-import gulp from 'gulp';
-import gulpif from 'gulp-if';
-import stylus from 'gulp-stylus';
-import filter from 'gulp-filter';
-import postcss from 'gulp-postcss';
-import cssnano from 'gulp-cssnano';
-import mqpacker from 'css-mqpacker';
-import { reload } from 'browser-sync';
-import autoprefixer from 'autoprefixer';
-import sourcemaps from 'gulp-sourcemaps';
-import fontWeights from 'postcss-font-weights';
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const stylus = require('gulp-stylus');
+const filter = require('gulp-filter');
+const postcss = require('gulp-postcss');
+const cssnano = require('gulp-cssnano');
+const mqpacker = require('css-mqpacker');
+const { reload } = require('browser-sync');
+const autoprefixer = require('autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+const fontWeights = require('postcss-font-weights');
 
-import { handleError } from '../utils';
-import { globalSettings, taskSettings } from '../config';
+const { handleError } = require('../utils');
+const { globalSettings, taskSettings } = require('../config');
 
 gulp.task('stylus', () => {
   const settings = {

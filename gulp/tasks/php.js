@@ -1,9 +1,9 @@
 
-import gulp from 'gulp';
-import gutil from 'gulp-util';
-import portfinder from 'portfinder';
-import browserSync from 'browser-sync';
-import connect from 'gulp-connect-php';
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const portfinder = require('portfinder');
+const browserSync = require('browser-sync');
+const connect = require('gulp-connect-php');
 
 gulp.task('php', () => {
   const serverPort = gutil.env.port || process.env.PORT || 8000;

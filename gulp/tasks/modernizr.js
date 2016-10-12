@@ -1,12 +1,12 @@
 
-import gulp from 'gulp';
-import gulpif from 'gulp-if';
-import uglify from 'gulp-uglify';
-import concat from 'gulp-concat';
-import modernizr from 'gulp-modernizr';
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const modernizr = require('gulp-modernizr');
 
-import { handleError } from '../utils';
-import { globalSettings, taskSettings } from '../config';
+const { handleError } = require('../utils');
+const { globalSettings, taskSettings } = require('../config');
 
 const sources = taskSettings.modernizr.src.map((source) => {
   return `./${source}`;
