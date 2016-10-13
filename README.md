@@ -9,7 +9,7 @@ Simple boilerplate to quickly start web projects using modern standards. Uses Gu
 
 Install Gulp globally
 ```
-npm install -g gulp
+npm install -g gulp-cli
 ```
 
 Install dependencies
