@@ -1,9 +1,15 @@
 
 const del = require('del');
-const gulp = require('gulp');
+const DefaultRegistry = require('undertaker-registry');
 
 const { taskSettings } = require('../config');
 
-gulp.task('clean', (callback) => {
-  return del(taskSettings.clean.src, callback);
-});
+class CleanTasksRegistry extends DefaultRegistry {
+  init (gulp) {
+    gulp.task('clean', (done) => {
+      return del(taskSettings.clean.src, done);
+    });
+  }
+}
+
+module.exports = new CleanTasksRegistry();
