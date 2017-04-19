@@ -9,12 +9,11 @@ const { taskSettings } = require('../config');
 
 class EslintTasksRegistry extends DefaultRegistry {
   init (gulp) {
-    const lint = () => {
-      return gulp.src(taskSettings.eslint.src)
-        .pipe(eslint())
-        .on('error', handleError)
-        .pipe(eslint.format('stylish'));
-    };
+    const lint = () => gulp
+      .src(taskSettings.eslint.src)
+      .pipe(eslint())
+      .on('error', handleError)
+      .pipe(eslint.format('stylish'));
 
     const handleResults = (results) => {
       if (results.errorCount > 0) {
@@ -27,17 +26,11 @@ class EslintTasksRegistry extends DefaultRegistry {
       }
     };
 
-    gulp.task('eslint', () => {
-      return lint().pipe(eslint.results(handleResults));
-    });
-
-    gulp.task('test-eslint', () => {
-      return lint().pipe(eslint.failAfterError());
-    });
-
-    gulp.task('watch-eslint', () => {
-      return gulp.watch(taskSettings.eslint.search, gulp.series('eslint'));
-    });
+    gulp.task('eslint', () => lint().pipe(eslint.results(handleResults)));
+    gulp.task('test-eslint', () => lint().pipe(eslint.failAfterError()));
+    gulp.task('watch-eslint', () => gulp
+      .watch(taskSettings.eslint.search, gulp.series('eslint'))
+    );
   }
 }
 

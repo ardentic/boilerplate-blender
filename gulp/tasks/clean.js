@@ -6,9 +6,7 @@ const { taskSettings } = require('../config');
 
 class CleanTasksRegistry extends DefaultRegistry {
   init (gulp) {
-    gulp.task('clean', (done) => {
-      return del(taskSettings.clean.src, done);
-    });
+    gulp.task('clean', (done) => del(taskSettings.clean.src, done));
   }
 }
 

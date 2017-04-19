@@ -7,16 +7,16 @@ const { taskSettings } = require('../config');
 
 class ImagesTasksRegistry extends DefaultRegistry {
   init (gulp) {
-    gulp.task('images', () => {
-      return gulp.src(taskSettings.images.src)
-        .pipe(changed(taskSettings.images.dest))
-        .pipe(gulp.dest(taskSettings.images.dest))
-        .on('error', handleError);
-    });
+    gulp.task('images', () => gulp
+      .src(taskSettings.images.src)
+      .pipe(changed(taskSettings.images.dest))
+      .pipe(gulp.dest(taskSettings.images.dest))
+      .on('error', handleError)
+    );
 
-    gulp.task('watch-images', () => {
-      return gulp.watch(taskSettings.images.search, gulp.series('images'));
-    });
+    gulp.task('watch-images', () => gulp
+      .watch(taskSettings.images.search, gulp.series('images'))
+    );
   }
 }
 

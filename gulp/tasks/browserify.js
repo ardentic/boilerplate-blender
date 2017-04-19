@@ -21,9 +21,7 @@ const { taskSettings, globalSettings } = require('../config');
 
 class BrowserifyTasksRegistry extends DefaultRegistry {
   init (gulp) {
-    const entries = taskSettings.scripts.src.map((path) => {
-      return `./${path}`;
-    });
+    const entries = taskSettings.scripts.src.map((path) => `./${path}`);
 
     const defaults = {
       extensions: ['.js', '.jsx'],
@@ -44,20 +42,18 @@ class BrowserifyTasksRegistry extends DefaultRegistry {
         .transform(envify(process.env))
         .transform(babelify.configure({ ignore: /(bower_components)|(node_modules)/ }));
 
-      const rebundle = () => {
-        return bundler
-          .bundle()
-          .on('error', handleError)
-          .pipe(source('main.js'))
-          .pipe(buffer())
-          .pipe(gulpif(!globalSettings.production, sourcemaps.init({ loadMaps: true })))
-          .pipe(gulpif(globalSettings.production, stripDebug()))
-          .pipe(gulpif(globalSettings.production, uglify()))
-          .pipe(gulpif(!globalSettings.production, sourcemaps.write('.')))
-          .pipe(gulp.dest(taskSettings.scripts.dest))
-          .pipe(filter('**/*.js'))
-          .pipe(reload({ stream: true }));
-      };
+      const rebundle = () => bundler
+        .bundle()
+        .on('error', handleError)
+        .pipe(source('main.js'))
+        .pipe(buffer())
+        .pipe(gulpif(!globalSettings.production, sourcemaps.init({ loadMaps: true })))
+        .pipe(gulpif(globalSettings.production, stripDebug()))
+        .pipe(gulpif(globalSettings.production, uglify()))
+        .pipe(gulpif(!globalSettings.production, sourcemaps.write('.')))
+        .pipe(gulp.dest(taskSettings.scripts.dest))
+        .pipe(filter('**/*.js'))
+        .pipe(reload({ stream: true }));
 
       if (watch) {
         bundler.on('update', () => {
@@ -77,17 +73,10 @@ class BrowserifyTasksRegistry extends DefaultRegistry {
       return rebundle();
     };
 
-    const watch = () => {
-      return compile(true);
-    };
+    const watch = () => compile(true);
 
-    gulp.task('browserify', () => {
-      return compile();
-    });
-
-    gulp.task('watchify', () => {
-      return watch();
-    });
+    gulp.task('browserify', () => compile());
+    gulp.task('watchify', () => watch());
   }
 }
 
