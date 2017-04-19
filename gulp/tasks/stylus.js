@@ -54,9 +54,9 @@ class StylusTasksRegistry extends DefaultRegistry {
         .pipe(reload({ stream: true }));
     });
 
-    gulp.task('watch-stylus', () => {
-      return gulp.watch(taskSettings.stylus.search, gulp.series('stylus'));
-    });
+    gulp.task('watch-stylus', () => gulp
+      .watch(taskSettings.stylus.search, gulp.series('stylus'))
+    );
   }
 }
 
