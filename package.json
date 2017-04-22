@@ -36,7 +36,7 @@
     "envify": "4.0.0",
     "eslint-plugin-react": "6.10.3",
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-changed": "2.0.0",
+    "gulp-changed": "3.0.0",
     "gulp-concat": "2.6.1",
     "gulp-connect-php": "0.0.8",
     "gulp-cssnano": "2.1.2",
