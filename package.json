@@ -34,7 +34,7 @@
     "del": "2.2.2",
     "dotenv": "4.0.0",
     "envify": "4.0.0",
-    "eslint-plugin-react": "6.10.3",
+    "eslint-plugin-react": "7.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-changed": "3.0.0",
     "gulp-concat": "2.6.1",
