@@ -45,7 +45,7 @@
     "gulp-if": "2.0.2",
     "gulp-modernizr": "1.0.0-alpha",
     "gulp-notify": "3.0.0",
-    "gulp-postcss": "6.4.0",
+    "gulp-postcss": "7.0.0",
     "gulp-sourcemaps": "2.5.0",
     "gulp-strip-debug": "1.1.0",
     "gulp-stylus": "2.6.0",
