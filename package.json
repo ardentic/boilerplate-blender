@@ -27,7 +27,7 @@
     "babel-register": "6.24.0",
     "babel-root-import": "4.1.8",
     "babelify": "7.3.0",
-    "browser-sync": "2.18.8",
+    "browser-sync": "2.18.9",
     "browserify": "14.1.0",
     "chalk": "1.1.3",
     "css-mqpacker": "5.0.1",
