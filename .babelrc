@@ -1,7 +1,17 @@
 {
   "presets": [
     "react",
-    "es2015"
+    [
+      "env", {
+        "targets": {
+          "browsers": [
+            "last 3 versions",
+            "ie >= 9"
+          ],
+          "node": "current"
+        }
+      }
+    ]
   ],
 
   "plugins": [
