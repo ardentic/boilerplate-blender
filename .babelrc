@@ -1,10 +1,23 @@
 {
-  "plugins": [
-    "babel-root-import"
-  ],
-
   "presets": [
     "react",
     "es2015"
-  ]
+  ],
+
+  "plugins": [
+    [
+      "babel-plugin-root-import", [
+        {
+          "rootPathPrefix": "@",
+          "rootPathSuffix": ""
+        },
+        {
+          "rootPathPrefix": "~",
+          "rootPathSuffix": "assets/scripts"
+        }
+      ]
+    ]
+  ],
+
+  "retainLines": true
 }
