@@ -2655,11 +2655,12 @@ grunt-legacy-log@~0.1.1:
     lodash "~2.4.1"
     underscore.string "~2.3.3"
 
-gulp-changed@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/gulp-changed/-/gulp-changed-2.0.0.tgz#7396d95aeab35c6bcbcb75169fd7f24a271a013b"
+gulp-changed@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-changed/-/gulp-changed-3.0.0.tgz#c6ca21f9c7c7211688dea46c5f3be9d52775acdc"
   dependencies:
     gulp-util "^3.0.0"
+    pify "^2.3.0"
     through2 "^2.0.0"
 
 gulp-cli@^1.0.0:
@@ -4529,7 +4530,7 @@ performance-now@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
 
-pify@^2.0.0:
+pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
 
