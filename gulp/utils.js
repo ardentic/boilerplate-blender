@@ -2,7 +2,7 @@
 const notify = require('gulp-notify');
 const { globalSettings } = require('./config');
 
-const handleError = (error) => {
+const handleError = function (error) {
   if (!globalSettings.production) {
     notify.onError({
       title: 'Blender',
