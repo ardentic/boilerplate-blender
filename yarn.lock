@@ -2682,9 +2682,9 @@ gulp-concat@2.6.1:
     through2 "^2.0.0"
     vinyl "^2.0.0"
 
-gulp-connect-php@0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/gulp-connect-php/-/gulp-connect-php-0.0.8.tgz#b8532f84488e0f215e3debd8ed288475636c6aae"
+gulp-connect-php@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gulp-connect-php/-/gulp-connect-php-1.0.1.tgz#0da0c50ba0a31ad50e2480b6bd05713d27f27808"
   dependencies:
     bin-version-check "^2.1.0"
     opn "^1.0.0"
