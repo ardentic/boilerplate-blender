@@ -1,8 +1,6 @@
 
 # Boilerplate Blender
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/ardentic/boilerplate-blender.svg)](https://greenkeeper.io/)
-
 ![Travis Build Status](https://travis-ci.org/ardentic/boilerplate-blender.svg?branch=master)
 
 Simple boilerplate to quickly start web projects using modern standards. Uses Gulp to run Stylus, PostCSS, ESLint, Browserify and Modernizr.
