@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@ardentic/eslint-config-flair@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@ardentic/eslint-config-flair/-/eslint-config-flair-1.2.1.tgz#e5e0c7c2a5624c654c396f9c31a64eeb09bd539a"
+"@ardentic/eslint-config-flair@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@ardentic/eslint-config-flair/-/eslint-config-flair-1.2.2.tgz#3ded21eb4a7638a4c663b11338ae97f527d74087"
 
 "@ardentic/stylus-jiggers@1.0.0":
   version "1.0.0"
