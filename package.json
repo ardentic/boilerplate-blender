@@ -4,7 +4,7 @@
   "description": "Simple boilerplate to quickly start web projects using modern standards. Uses Gulp to run Stylus, PostCSS, ESLint, Browserify and Modernizr.",
   "license": "MIT",
   "engines": {
-    "node": "6.7.0"
+    "node": "6.11.2"
   },
   "scripts": {
     "test": "gulp test",
