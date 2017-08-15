@@ -1,17 +1,13 @@
-#
-# folders
-#
+
 /node_modules
 /bower_components
 /vendor
+
 /public/styles
 /public/scripts
 /public/fonts
 /public/images
 
-#
-# files
-#
 *.diff
 *.err
 *.orig
