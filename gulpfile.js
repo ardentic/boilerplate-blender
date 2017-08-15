@@ -1,3 +1,3 @@
 
-require('dotenv').config({ silent: true });
+require('dotenv/config');
 require('./gulp');
